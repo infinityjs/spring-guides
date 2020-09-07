@@ -27,8 +27,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>server-web</module>
-        <module>server-core</module>
+        <module>mobile-webapp</module>
     </modules>
 
 </project>
