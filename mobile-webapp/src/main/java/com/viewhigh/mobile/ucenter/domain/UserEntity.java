@@ -1,11 +1,14 @@
 package com.viewhigh.mobile.ucenter.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "ucenter_user")
-public class UserEntity {
+public class UserEntity implements Serializable {
     private String userId;
     private String username;
     private String password;
@@ -20,6 +23,8 @@ public class UserEntity {
 
     @Id
     @Column(name = "user_id", nullable = false, length = 32)
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid",strategy = "uuid")
     public String getUserId() {
         return userId;
     }
