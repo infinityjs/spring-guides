@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>详细信息</title>
+</head>
+<body>
+
+<p>用户名：<span th:text="${userEntity.getUsername()}"></span></p>
+<p>性别：<span th:text="${userEntity.getSex()}">abc</span></p>
+<p>创建日期：<span th:text="${userEntity.getCreateTime()}">abc</span></p>
+</body>
+</html>
