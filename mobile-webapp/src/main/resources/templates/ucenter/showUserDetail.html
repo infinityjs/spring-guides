@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>详细信息</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.0/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../../templates.css/starter-template.css">
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
 </head>
 <body>
 
-<p>用户名：<span th:text="${userEntity.getUsername()}"></span></p>
-<p>性别：<span th:text="${userEntity.getSex()}">abc</span></p>
-<p>创建日期：<span th:text="${userEntity.getCreateTime()}">abc</span></p>
+
+
+
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>用户信息</h1>
+        <p class="lead">用户名：<span th:text="${userEntity.getUsername()}"></span></p>
+        <p>性别：<span th:text="${userEntity.getSex()}">abc</span></p>
+        <p>创建日期：<span th:text="${userEntity.getCreateTime()}">abc</span></p>
+    </div>
+
+</main>
 </body>
 </html>
