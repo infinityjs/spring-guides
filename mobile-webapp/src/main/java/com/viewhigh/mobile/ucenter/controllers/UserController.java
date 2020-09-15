@@ -25,7 +25,7 @@ public class UserController {
         return "/ucenter/showUser";
     }
 
-    @GetMapping("/showUserDetail")
+    @GetMapping("/userDetail")
     public String showUserByName(Model model,String username){
 
 

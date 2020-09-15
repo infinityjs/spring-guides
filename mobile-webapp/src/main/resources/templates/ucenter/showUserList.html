@@ -34,7 +34,7 @@
             <tbody>
             <tr th:each="user:${result.getContent()}">
                 <td th:text="${userStat.count}">c</td>
-                <td th:text="${user.username}">Lorem</td>
+                <td><a th:href="@{'userDetail?username='+${user.username}}"><span th:text="${user.username}">name</span></a></td>
                 <td th:text="${user.nickname}">ipsum</td>
                 <td th:text="${#dates.format(user.createTime,'yyyy-MM-dd')}"></td>
                 <td th:switch="${user.sex}">
@@ -46,7 +46,7 @@
                 <td>
                     <div class="btn-group mr-2">
                     <button type="button" class="btn btn-sm btn-outline-secondary">编辑</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary" th:onclick="'javascript:deleteUser('+${user.userId}+')'">删除</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">删除</button>
                 </div>
                 </td>
             </tr>
