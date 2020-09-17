@@ -32,9 +32,28 @@ public class UserController {
         UserEntity user = userService.findUserByUsername(username);
         if (user !=null) {
             model.addAttribute("status","0");
-            model.addAttribute("userEntity", user);
+            model.addAttribute("user", user);
         }else model.addAttribute("status","1");
         return "/ucenter/showUserDetail";
+    }
+
+    @GetMapping("/userEdit")
+    public String userEdit(Model model,String username){
+        String type="new";
+
+        if(username!=null) {
+            type = "edit";
+
+            UserEntity user = userService.findUserByUsername(username);
+            if (user != null) {
+                model.addAttribute("status", "0");
+                model.addAttribute("user", user);
+
+            }
+        }
+        model.addAttribute("type", type);
+
+        return "/ucenter/editUser";
     }
 
     @GetMapping("/userList")
